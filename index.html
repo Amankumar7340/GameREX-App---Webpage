@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameREX | AI Game Recommendations</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav>
+        <a href="#" class="logo">Game<span style="color:red">REX</span></a>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#versions">Download</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#versions" class="download-btn">Download Now</a></li>
+        </ul>
+    </nav>
+    
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <h1>Discover Your Next Favorite Game</h1>
+        <p>Our AI-powered recommendation engine analyzes your preferences to suggest perfect games tailored just for you.</p>
+        
+        <div class="platform-selector">
+            <button class="platform-btn active" data-platform="android">Android</button>
+            <button class="platform-btn" data-platform="ios">iOS</button>
+        </div>
+        
+        <div id="android-download">
+            <a href="GameREX.apk" class="download-version" style="max-width: 200px; margin: 0 auto;">Download for Android</a>
+        </div>
+        
+        <div id="ios-download" style="display: none;">
+            <a href="GameREX.apk" class="download-version" style="max-width: 200px; margin: 0 auto;">Download for iOS</a>
+        </div>
+    </section>
+    
+<!-- Versions Section -->
+<section class="versions" id="versions">
+    <h2 class="section-title">Available Versions</h2>
+    
+    <div class="versions-carousel">
+        <button class="carousel-arrow prev-arrow">❮</button>
+        <div class="versions-container">
+            <div class="versions-track">
+                <!-- Version 1 -->
+                <div class="version-card">
+                    <div class="version-header">
+                        <h3>Version 2.1.0</h3>
+                        <p>Latest Release</p>
+                    </div>
+                    <div class="version-body">
+                        <ul>
+                            <li>Improved recommendation algorithm</li>
+                            <li>Added 500+ new games to database</li>
+                            <li>Dark mode support</li>
+                            <li>Performance optimizations</li>
+                        </ul>
+                        <a href="GameREX.apk" class="download-version" download="GameREX_v2.1.0.apk">Download APK (25MB)</a>
+                        <div class="download-meta">
+                            <span>Updated: 2023-11-15</span>
+                            <span>Downloads: 1,240</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Version 2 -->
+                <div class="version-card">
+                    <div class="version-header">
+                        <h3>Version 2.0.3</h3>
+                        <p>Stable Release</p>
+                    </div>
+                    <div class="version-body">
+                        <ul>
+                            <li>Bug fixes and stability improvements</li>
+                            <li>Improved UI/UX</li>
+                            <li>Reduced app size by 15%</li>
+                            <li>Better battery optimization</li>
+                        </ul>
+                        <a href="GameREX(V1).apk" class="download-version" download="GameREX_v2.0.3.apk">Download APK (23MB)</a>
+                        <div class="download-meta">
+                            <span>Updated: 2023-10-28</span>
+                            <span>Downloads: 2,450</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Version 3 -->
+                <div class="version-card">
+                    <div class="version-header">
+                        <h3>Version 1.9.5</h3>
+                        <p>Legacy Version</p>
+                    </div>
+                    <div class="version-body">
+                        <ul>
+                            <li>Compatible with older devices</li>
+                            <li>Simplified interface</li>
+                            <li>Basic recommendation features</li>
+                            <li>Smaller download size</li>
+                        </ul>
+                        <a href="GameREX.apk" class="download-version" download="GameREX_v1.9.5.apk">Download APK (18MB)</a>
+                        <div class="download-meta">
+                            <span>Updated: 2023-09-10</span>
+                            <span>Downloads: 3,780</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-arrow next-arrow">❯</button>
+    </div>
+    <!-- <div class="carousel-dots">
+        <span class="dot active" data-index="0"></span>
+        <span class="dot" data-index="1"></span>
+        <span class="dot" data-index="2"></span>
+    </div> -->
+</section>
+
+<style>
+    /* Versions Carousel Styles */
+    .versions-carousel {
+        position: relative;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 50px;
+    }
+
+    .versions-container {
+        overflow: hidden;
+        width: 100%;
+    }
+
+    .versions-track {
+        display: flex;
+        transition: transform 0.5s ease;
+        gap: 30px;
+        padding: 20px 10px;
+    }
+
+    .version-card {
+        min-width: calc(33.333% - 20px);
+        flex: 0 0 auto;
+        scroll-snap-align: start;
+    }
+
+    .carousel-arrow {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(255, 255, 255, 0.7);
+        color: #333;
+        border: none;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        font-size: 24px;
+        cursor: pointer;
+        z-index: 10;
+        transition: all 0.3s ease;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+
+    .carousel-arrow:hover {
+        background: rgba(255, 255, 255, 0.9);
+        transform: translateY(-50%) scale(1.1);
+    }
+
+    .prev-arrow {
+        left: 0;
+    }
+
+    .next-arrow {
+        right: 0;
+    }
+
+    .carousel-dots {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        margin-top: 20px;
+    }
+
+    .dot {
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        background: #ccc;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .dot.active {
+        background: var(--primary-color);
+        transform: scale(1.2);
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 992px) {
+        .version-card {
+            min-width: calc(50% - 15px);
+        }
+    }
+
+    @media (max-width: 768px) {
+        .versions-carousel {
+            padding: 0 40px;
+        }
+        
+        .carousel-arrow {
+            width: 40px;
+            height: 40px;
+            font-size: 20px;
+        }
+    }
+
+    @media (max-width: 576px) {
+        .version-card {
+            min-width: 100%;
+        }
+        
+        .versions-carousel {
+            padding: 0 30px;
+        }
+    }
+</style>
+
+<script>
+    // Versions Carousel Functionality
+    document.addEventListener('DOMContentLoaded', function() {
+        const track = document.querySelector('.versions-track');
+        const cards = document.querySelectorAll('.version-card');
+        const prevBtn = document.querySelector('.prev-arrow');
+        const nextBtn = document.querySelector('.next-arrow');
+        const dots = document.querySelectorAll('.dot');
+        let currentIndex = 0;
+        const cardWidth = cards[0].offsetWidth;
+        const gap = 30; // Same as gap in CSS
+        
+        function updateCarousel() {
+            const offset = -currentIndex * (cardWidth + gap);
+            track.style.transform = `translateX(${offset}px)`;
+            
+            // Update dots
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentIndex);
+            });
+        }
+        
+        function nextCard() {
+            if (currentIndex < cards.length - 1) {
+                currentIndex++;
+                updateCarousel();
+            }
+        }
+        
+        function prevCard() {
+            if (currentIndex > 0) {
+                currentIndex--;
+                updateCarousel();
+            }
+        }
+        
+        // Event Listeners
+        nextBtn.addEventListener('click', nextCard);
+        prevBtn.addEventListener('click', prevCard);
+        
+        dots.forEach(dot => {
+            dot.addEventListener('click', function() {
+                currentIndex = parseInt(this.dataset.index);
+                updateCarousel();
+            });
+        });
+        
+        // Handle window resize
+        window.addEventListener('resize', function() {
+            const newCardWidth = cards[0].offsetWidth;
+            if (newCardWidth !== cardWidth) {
+                updateCarousel();
+            }
+        });
+        
+        // Initialize
+        updateCarousel();
+    });
+</script>
+    <!-- About Section -->
+<section class="about" id="about">
+    <div class="about-content">
+        <div class="image-carousel">
+            <div class="carousel-container">
+                <img src="menu.png" alt="GameREX AI Screenshot 1" class="carousel-image active">
+                <img src="home.png" alt="GameREX AI Screenshot 2" class="carousel-image">
+                <img src="login.png" alt="GameREX AI Screenshot 3" class="carousel-image">
+                <img src="game.png" alt="GameREX AI Screenshot 4" class="carousel-image">
+            </div>
+            <button class="carousel-btn prev-btn">&lt;</button>
+            <button class="carousel-btn next-btn">&gt;</button>
+            <div class="carousel-dots">
+                <span class="dot active" data-index="0"></span>
+                <span class="dot" data-index="1"></span>
+                <span class="dot" data-index="2"></span>
+                <span class="dot" data-index="3"></span>
+            </div>
+        </div>
+        <div class="about-text">
+            <h2>About GameREX AI</h2>
+            <p>GameREX AI is a revolutionary application that uses advanced machine learning algorithms to analyze your gaming preferences and recommend titles you'll love.</p>
+            <p>Our AI considers thousands of factors including game mechanics, genres you enjoy, playtime patterns, and even your mood to suggest the perfect games for you.</p>
+            <p>With a database of over 50,000 games across all platforms, we're confident we can help you discover your next gaming obsession.</p>
+        </div>
+    </div>
+</section>
+    
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <h2 class="section-title">Contact Us</h2>
+        
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Get in Touch</h3>
+                <p>Have questions or feedback about GameREX AI? We'd love to hear from you!</p>
+                <p><i class="fas fa-envelope"></i> Email: amankumar.987635@gmail.com</p>
+                <p><i class="fas fa-phone"></i> Phone: +91 7340938568</p>
+            </div>
+            
+            <div class="contact-form-container">
+                <form method="POST" id="form">
+                    <input type="hidden" name="access_key" value="d6460635-b0df-4d83-acca-6de93c6c366c">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <textarea name="message" placeholder="Your Message" required></textarea>
+                    <button type="submit">Send Message</button>
+                    <div id="result"></div>
+                </form>
+                
+                <!-- Popup for form submission -->
+                <div id="popup" class="popup">
+                    <div class="circle-loader"></div>
+                    <div class="checkmark">✓</div>
+                    <p id="popup-result"></p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <ul class="footer-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#versions">Download</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+        </ul>
+        <p class="copyright">© 2023 GameREX AI. All rights reserved.</p>
+    </footer>
+
+    
+    
+    <!-- Back to Top Button -->
+    <div class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up" style="font-weight: bold;"></i>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
